@@ -51,10 +51,10 @@ function recordVoiceButtonOnClickListener() {
     const speechResult = event.results[0][0].transcript.toLowerCase();
 
     //Writing results to screen
-    userSpokenResultPTag.textContent =
-      'What the system think you said: \r\n' +
+    userSpokenResultPTag.innerHTML =
+      'What the system think you said: <br><br>' +
       speechResult +
-      '\r\n' +
+      '<br><br>' +
       convertCharactersToJyutping(speechResult);
     systemConfidenceOutputPTag.textContent =
       'Confidence: ' + (event.results[0][0].confidence * 100).toFixed(2) + '%';
@@ -128,7 +128,12 @@ function convertCharactersToJyutping(characters) {
 }
 
 function renderResultTable(results) {
-  //Clear Table
+  //Clear Table and keep headers
+  resultTable.innerHTML = `<tr>
+  <th>Characters</th>
+  <th>Jyutping</th>
+  <th>Confidence of System</th>
+</tr>`;
 
   //add headers back into table
 
@@ -152,7 +157,5 @@ function renderResultTable(results) {
 
     //add row to table
     resultTable.appendChild(row);
-
-    console.log('ROW', row);
   }
 }
