@@ -20,7 +20,6 @@ function recordVoiceButtonOnClickListener() {
 
   //Get text from the input field
   var phrase = userInputToTestAgentsPTag.value;
-  console.log('Phrase: ' + phrase);
 
   // To ensure case consistency while checking with the returned output text
   phrase = phrase.toLowerCase();
@@ -143,17 +142,17 @@ function renderResultTable(results) {
     let row = document.createElement('tr');
     let cellCharacter = document.createElement('td');
     let cellJyutping = document.createElement('td');
-    let cellCofidence = document.createElement('td');
+    let cellConfidence = document.createElement('td');
 
     //Fill cells with information
     cellCharacter.innerHTML = results[i].transcript;
     cellJyutping.innerHTML = convertCharactersToJyutping(results[i].transcript);
-    cellCofidence.innerHTML = (results[i].confidence * 100).toFixed(2) + '%';
+    cellConfidence.innerHTML = (results[i].confidence * 100).toFixed(2) + '%';
 
     //add cells to row
     row.appendChild(cellCharacter);
     row.appendChild(cellJyutping);
-    row.appendChild(cellCofidence);
+    row.appendChild(cellConfidence);
 
     //add row to table
     resultTable.appendChild(row);
