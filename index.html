@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
 
     <title>Language Speech Pronunciation Practice Helper</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css" />
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
@@ -17,15 +17,28 @@
     <h1>Language Speech Pronunciation Practice Helper</h1>
 
     <!-- Input for user to input text to test agents -->
-    <input type="text" class="txt" id="textToTestAgentsInput">
+    <input type="text" class="txt" id="textToTestAgentsInput" />
 
     <button id="recordVoiceButton">Record Voice</button>
-    
+
     <div>
       <p id="userSpokenResult">Press the button and start speaking!</p>
       <p id="systemConfidenceOutput">Confidence 100%</p>
     </div>
 
+    <div>
+      <p>full results</p>
+      <table id="resultTable">
+        <tr>
+          <th>Characters</th>
+          <th>Jyutping</th>
+          <th>Confidence of System</th>
+        </tr>
+      </table>
+    </div>
+
     <script src="script.js"></script>
+    <script src="cantojpmin_data.js"></script>
+    <script src="cantojpmin_functions.js"></script>
   </body>
 </html>
